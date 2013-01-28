@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.androidzeitgeist.networkintent.transmitter;
+package com.androidzeitgeist.ani.transmitter;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -25,8 +25,8 @@ import java.net.UnknownHostException;
 
 import android.content.Intent;
 
-import com.androidzeitgeist.networkintent.discovery.Discovery;
-import com.androidzeitgeist.networkintent.internal.AndroidNetworkIntents;
+import com.androidzeitgeist.ani.discovery.Discovery;
+import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
 
 /**
  * Transmitter class for sending {@link Intent}s through network.

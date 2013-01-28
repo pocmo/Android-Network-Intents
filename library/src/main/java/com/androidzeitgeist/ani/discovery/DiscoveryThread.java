@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.androidzeitgeist.networkintent.discovery;
+package com.androidzeitgeist.ani.discovery;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

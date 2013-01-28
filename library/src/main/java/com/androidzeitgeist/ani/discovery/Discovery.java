@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.androidzeitgeist.networkintent.discovery;
+package com.androidzeitgeist.ani.discovery;
 
 import android.content.Intent;
 
-import com.androidzeitgeist.networkintent.internal.AndroidNetworkIntents;
+import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
 
 /**
  * Discovery class for receiving {@link Intent}s from the network.

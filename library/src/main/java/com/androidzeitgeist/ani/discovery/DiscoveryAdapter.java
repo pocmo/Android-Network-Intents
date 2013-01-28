@@ -1,4 +1,4 @@
-package com.androidzeitgeist.networkintent.discovery;
+package com.androidzeitgeist.ani.discovery;
 
 import android.content.Intent;
 

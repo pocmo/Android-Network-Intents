@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.androidzeitgeist.networkintent.transmitter;
+package com.androidzeitgeist.ani.discovery;
 
 /**
  * Wrapper exception for all kind of low level exceptions that can be thrown by
- * the implementation of the {@link Transmitter} class.
+ * the implementation of the {@link Discovery} class.
  *
  * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 @SuppressWarnings("serial")
-public class TransmitterException extends Exception {
+public class DiscoveryException extends Exception {
     /**
-     * Constructs a new {@link TransmitterException} with the current stack trace, the
+     * Constructs a new {@link DiscoveryException} with the current stack trace, the
      * specified detail message and the specified cause.
      *
      * @param detailMessage the detail message for this exception.
      * @param cause the cause of this exception.
      */
-    public TransmitterException(String detailMessage, Throwable cause) {
+    public DiscoveryException(String detailMessage, Exception cause) {
         super(detailMessage, cause);
     }
 }

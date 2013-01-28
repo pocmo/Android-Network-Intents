@@ -14,24 +14,15 @@
  * limitations under the License.
  */
 
-package com.androidzeitgeist.networkintent.discovery;
+package com.androidzeitgeist.ani.internal;
 
 /**
- * Wrapper exception for all kind of low level exceptions that can be thrown by
- * the implementation of the {@link Discovery} class.
+ * Internal class for implementation specific constants.
  *
  * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
-@SuppressWarnings("serial")
-public class DiscoveryException extends Exception {
-    /**
-     * Constructs a new {@link DiscoveryException} with the current stack trace, the
-     * specified detail message and the specified cause.
-     *
-     * @param detailMessage the detail message for this exception.
-     * @param cause the cause of this exception.
-     */
-    public DiscoveryException(String detailMessage, Exception cause) {
-        super(detailMessage, cause);
-    }
+public class AndroidNetworkIntents {
+    public static final String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
+
+    public static final int DEFAULT_PORT = 5775;
 }
