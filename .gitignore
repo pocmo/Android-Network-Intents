@@ -1,0 +1,8 @@
+# Eclipse files
+.project
+.classpath
+
+# Generated and compiled stuff
+bin/
+gen/
+
