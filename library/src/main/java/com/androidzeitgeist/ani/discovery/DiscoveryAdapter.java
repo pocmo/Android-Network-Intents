@@ -21,6 +21,7 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
      * @param address The IP address of the sender of the {@link Intent}.
      * @param intent The received {@link Intent}.
      */
+    @Override
     public abstract void onIntentDiscovered(InetAddress address, Intent intent);
 
     /**
@@ -29,6 +30,7 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
      *
      * Empty default implementation.
      */
+    @Override
     public void onDiscoveryStarted() {
         // Empty default implementation
     }
@@ -38,6 +40,7 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
      *
      * Empty default implementation.
      */
+    @Override
     public void onDiscoveryStopped() {
         // Empty default implementation
     }
@@ -47,6 +50,7 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
      *
      * Empty default implementation.
      */
+    @Override
     public void onDiscoveryError() {
         // Empty default implementation
     }
