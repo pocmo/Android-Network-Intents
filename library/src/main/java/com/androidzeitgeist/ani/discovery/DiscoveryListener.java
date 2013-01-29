@@ -16,6 +16,8 @@
 
 package com.androidzeitgeist.ani.discovery;
 
+import java.net.InetAddress;
+
 import android.content.Intent;
 
 /**
@@ -45,7 +47,8 @@ public interface DiscoveryListener {
     /**
      * Called when the {@link Discovery} has successfully received an {@link Intent}.
      *
+     * @param address The IP address of the sender of the {@link Intent}.
      * @param intent The received {@link Intent}.
      */
-    public void onIntentDiscovered(Intent intent);
+    public void onIntentDiscovered(InetAddress address, Intent intent);
 }

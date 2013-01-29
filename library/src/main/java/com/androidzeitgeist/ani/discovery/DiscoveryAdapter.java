@@ -1,5 +1,7 @@
 package com.androidzeitgeist.ani.discovery;
 
+import java.net.InetAddress;
+
 import android.content.Intent;
 
 /**
@@ -16,9 +18,10 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
     /**
      * Called when the {@link Discovery} has successfully received an {@link Intent}.
      *
+     * @param address The IP address of the sender of the {@link Intent}.
      * @param intent The received {@link Intent}.
      */
-    public abstract void onIntentDiscovered(Intent intent);
+    public abstract void onIntentDiscovered(InetAddress address, Intent intent);
 
     /**
      * The {@link Discovery} has been started and is now waiting for incoming
