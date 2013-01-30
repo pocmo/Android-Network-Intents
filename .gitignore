@@ -6,3 +6,6 @@
 bin/
 gen/
 
+# Maven
+target/
+
