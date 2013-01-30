@@ -49,9 +49,11 @@ public abstract class DiscoveryAdapter implements DiscoveryListener {
      * An unrecoverable error occured. The {@link Discovery} is going to be stopped.
      *
      * Empty default implementation.
+     *
+     * @param exception Actual exception that occured in the background thread
      */
     @Override
-    public void onDiscoveryError() {
+    public void onDiscoveryError(Exception exception) {
         // Empty default implementation
     }
 }

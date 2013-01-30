@@ -41,8 +41,10 @@ public interface DiscoveryListener {
 
     /**
      * An unrecoverable error occured. The {@link Discovery} is going to be stopped.
+     *
+     * @param exception Actual exception that occured in the background thread
      */
-    public void onDiscoveryError();
+    public void onDiscoveryError(Exception exception);
 
     /**
      * Called when the {@link Discovery} has successfully received an {@link Intent}.
