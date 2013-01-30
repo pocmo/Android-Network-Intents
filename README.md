@@ -6,6 +6,14 @@ writing simple app or service discovery protocols but as it can be used to send 
 receive any Intents through the network without knowing the specific receivers there
 might be a lot of other use cases.
 
+Samples
+=======
+
+**IntentChat**: A simple chat application that allows devices in the same network to chat with each other
+without connecting to anything.
+
+![IntentChat Screenshot][1]
+
 Developed by
 ============
 
@@ -27,4 +35,6 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+[1]: https://raw.github.com/pocmo/Android-Network-Intents/master/samples/IntentChat/screenshot.png
 
