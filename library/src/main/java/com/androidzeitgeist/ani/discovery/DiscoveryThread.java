@@ -69,7 +69,9 @@ class DiscoveryThread extends Thread {
             createSocket();
             receiveIntents();
         } catch(IOException exception) {
-            listener.onDiscoveryError(exception);
+            if (running) {
+                listener.onDiscoveryError(exception);
+            }
         } finally {
             closeSocket();
         }
