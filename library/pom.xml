@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.androidzeitgeist</groupId>
+  <artifactId>android-network-intents</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>Android Network Intents</name>
+  <description>
+    Android library for sending Intent objects as UDP packets to multicast addresses.
+    You can use this library to identify devices (Network Service Discovery) or
+    communicate with devices on your local network without knowing their IP addresses.
+  </description>
+  <url>https://github.com/pocmo/Android-Network-Intents</url>
+
+  <developers>
+    <developer>
+      <name>Sebastian Kaspari</name>
+      <email>s.kaspari@gmail.com</email>
+      <id>pocmo</id>
+      <url>http://www.androidzeitgeist.com</url>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.android</groupId>
+      <artifactId>android</artifactId>
+      <version>4.1.1.4</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.9.5</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
