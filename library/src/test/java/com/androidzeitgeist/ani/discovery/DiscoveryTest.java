@@ -16,8 +16,9 @@
 package com.androidzeitgeist.ani.discovery;
 
 import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 import org.junit.Test;
 
@@ -41,5 +42,25 @@ public class DiscoveryTest {
 
         verify(discovery).setDisoveryListener(listener);
         verify(discovery).enable();
+    }
+
+    /**
+     * Calling {@link Discovery#enable()} without setting a listener will throw an
+     * {@link IllegalStateException}.
+     */
+    @Test(expected=IllegalStateException.class)
+    public void testEnableThrowsExceptionIfNoListenerIsSet() throws Exception {
+        Discovery discovery = new Discovery();
+        discovery.enable();
+    }
+
+    /**
+     * Calling {@link Discovery#disable()} without a matching call to
+     * {@link Discovery#enable()} will throw an {@link IllegalAccessError}.
+     */
+    @Test(expected=IllegalAccessError.class)
+    public void testDisableWithoutEnablingWillThrowException() throws Exception {
+        Discovery discovery = new Discovery();
+        discovery.disable();
     }
 }
