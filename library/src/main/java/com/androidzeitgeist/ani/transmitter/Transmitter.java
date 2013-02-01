@@ -84,7 +84,7 @@ public class Transmitter {
         MulticastSocket socket = null;
 
         try {
-            socket = new MulticastSocket();
+            socket = createSocket();
             transmit(socket, intent);
         } catch (UnknownHostException exception) {
             throw new TransmitterException("Unknown host", exception);
@@ -97,6 +97,10 @@ public class Transmitter {
                 socket.close();
             }
         }
+    }
+
+    protected MulticastSocket createSocket() throws IOException {
+        return new MulticastSocket();
     }
 
     /**
