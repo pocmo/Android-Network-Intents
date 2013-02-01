@@ -112,11 +112,15 @@ public class Discovery {
         }
 
         if (thread == null) {
-            thread = new DiscoveryThread(multicastAddress, port, listener);
+            thread = createDiscoveryThread();
             thread.start();
         } else {
             throw new IllegalAccessError("Discovery already started");
         }
+    }
+
+    protected DiscoveryThread createDiscoveryThread() {
+        return new DiscoveryThread(multicastAddress, port, listener);
     }
 
     /**

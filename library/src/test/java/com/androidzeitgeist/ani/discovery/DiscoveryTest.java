@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.androidzeitgeist.ani.discovery;
 
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -62,5 +65,79 @@ public class DiscoveryTest {
     public void testDisableWithoutEnablingWillThrowException() throws Exception {
         Discovery discovery = new Discovery();
         discovery.disable();
+    }
+
+    /**
+     * Calling {@link Discovery#enable()} will create and start a {@link DiscoveryThread}.
+     */
+    @Test
+    public void testEnableWillCreateAndStartDiscoveryThread() throws Exception {
+        DiscoveryThread thread = mock(DiscoveryThread.class);
+        DiscoveryListener listener = mock(DiscoveryListener.class);
+
+        Discovery discovery = spy(new Discovery());
+        discovery.setDisoveryListener(listener);
+
+        doReturn(thread).when(discovery).createDiscoveryThread();
+
+        discovery.enable();
+
+        verify(discovery).createDiscoveryThread();
+        verify(thread).start();
+    }
+
+    /**
+     * Calling {@link Discovery#enable()} twice without calling {@link Discovery#disable()}
+     * in between throws an {@link IllegalAccessError}.
+     */
+    @Test(expected=IllegalAccessError.class)
+    public void testEnablingDiscoveryTwiceThrowsException() throws Exception {
+        DiscoveryThread thread = mock(DiscoveryThread.class);
+        DiscoveryListener listener = mock(DiscoveryListener.class);
+
+        Discovery discovery = spy(new Discovery());
+        discovery.setDisoveryListener(listener);
+
+        doReturn(thread).when(discovery).createDiscoveryThread();
+
+        discovery.enable();
+        discovery.enable();
+    }
+
+    /**
+     * Calling {@link Discovery#disable()} will call {@link DiscoveryThread#stopDiscovery()}
+     */
+    @Test
+    public void testCallingDisableWillCallDisableDiscoveryOnThread() throws Exception {
+        DiscoveryThread thread = mock(DiscoveryThread.class);
+        DiscoveryListener listener = mock(DiscoveryListener.class);
+
+        Discovery discovery = spy(new Discovery());
+        discovery.setDisoveryListener(listener);
+
+        doReturn(thread).when(discovery).createDiscoveryThread();
+
+        discovery.enable();
+        discovery.disable();
+
+        verify(thread).start();
+        verify(thread).stopDiscovery();
+    }
+
+    /**
+     * Calling {@link Discovery#createDiscoveryThread()} returns new {@link DiscoveryThread}
+     * instance.
+     */
+    @Test
+    public void testCreateDiscoveryThreadReturnsNewInstance() {
+        Discovery discovery = new Discovery();
+
+        DiscoveryThread thread1 = discovery.createDiscoveryThread();
+        DiscoveryThread thread2 = discovery.createDiscoveryThread();
+
+        Assert.assertNotNull(thread1);
+        Assert.assertNotNull(thread2);
+
+        Assert.assertNotSame(thread1, thread2);
     }
 }
