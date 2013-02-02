@@ -66,7 +66,7 @@ class DiscoveryThread extends Thread {
         listener.onDiscoveryStarted();
 
         try {
-            createSocket();
+            socket = createSocket();
             receiveIntents();
         } catch(IOException exception) {
             if (running) {
@@ -79,11 +79,13 @@ class DiscoveryThread extends Thread {
         listener.onDiscoveryStopped();
     }
 
-    private void createSocket() throws UnknownHostException, IOException {
+    protected MulticastSocket createSocket() throws UnknownHostException, IOException {
         InetAddress address = InetAddress.getByName(multicastAddress);
 
-        socket = new MulticastSocket(port);
+        MulticastSocket socket = new MulticastSocket(port);
         socket.joinGroup(address);
+
+        return socket;
     }
 
     private void closeSocket() {
