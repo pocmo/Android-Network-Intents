@@ -31,7 +31,7 @@ import org.mockito.ArgumentCaptor;
 
 import android.content.Intent;
 
-import com.androidzeitgeist.ani.DummyTestValues;
+import com.androidzeitgeist.ani.test.DummyTestValues;
 
 /**
  * Unit tests for the {@link Transmitter} class.
