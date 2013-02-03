@@ -6,6 +6,13 @@ writing simple app or service discovery protocols but as it can be used to send 
 receive any Intents through the network without knowing the specific receivers there
 might be a lot of other use cases.
 
+Usage
+=====
+
+ * [Sending Intents](https://github.com/pocmo/Android-Network-Intents/wiki/Sending-Intents)
+ * [Receiving Intents](https://github.com/pocmo/Android-Network-Intents/wiki/Receiving-Intents)
+ * [FAQ](https://github.com/pocmo/Android-Network-Intents/wiki/FAQ)
+
 Samples
 =======
 
