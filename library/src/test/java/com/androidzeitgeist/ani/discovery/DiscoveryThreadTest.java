@@ -17,9 +17,12 @@
 package com.androidzeitgeist.ani.discovery;
 
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
+
+import java.net.MulticastSocket;
 
 import org.junit.Test;
 
@@ -49,5 +52,28 @@ public class DiscoveryThreadTest {
 
         verify(listener).onDiscoveryStarted();
         verify(listener).onDiscoveryStopped();
+    }
+
+    /**
+     * Verify that close() will be called on the created socket.
+     */
+    @Test
+    public void testSocketWillBeClosed() throws Exception {
+        DiscoveryListener listener = mock(DiscoveryListener.class);
+
+        DiscoveryThread thread = spy(new DiscoveryThread(
+            AndroidNetworkIntents.DEFAULT_MULTICAST_ADDRESS,
+            AndroidNetworkIntents.DEFAULT_PORT,
+            listener
+        ));
+
+        MulticastSocket socket = mock(MulticastSocket.class);
+        doReturn(socket).when(thread).createSocket();
+
+        doNothing().when(thread).receiveIntents();
+
+        thread.run();
+
+        verify(socket).close();
     }
 }
