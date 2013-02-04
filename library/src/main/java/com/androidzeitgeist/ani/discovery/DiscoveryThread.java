@@ -100,7 +100,7 @@ class DiscoveryThread extends Thread {
         closeSocket();
     }
 
-    public void receiveIntents() throws IOException {
+    protected void receiveIntents() throws IOException {
         while (running) {
             DatagramPacket packet = new DatagramPacket(
                 new byte[MAXIMUM_PACKET_BYTES], MAXIMUM_PACKET_BYTES
