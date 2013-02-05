@@ -15,6 +15,17 @@
   </description>
   <url>https://github.com/pocmo/Android-Network-Intents</url>
 
+  <scm>
+    <url>https://github.com/pocmo/Android-Network-Intents</url>
+    <connection>scm:git:git@github.com:pocmo/Android-Network-Intents.git</connection>
+    <developerConnection>scm:git:git@github.com:pocmo/Android-Network-Intents.git</developerConnection>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/pocmo/Android-Network-Intents/issues</url>
+  </issueManagement>
+
   <developers>
     <developer>
       <name>Sebastian Kaspari</name>
