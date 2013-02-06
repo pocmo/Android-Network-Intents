@@ -26,6 +26,7 @@ import static org.mockito.Mockito.verify;
 import java.io.IOException;
 import java.net.MulticastSocket;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
@@ -101,5 +102,28 @@ public class DiscoveryThreadTest {
         verify(listener).onDiscoveryStarted();
         verify(listener).onDiscoveryError(exception);
         verify(listener).onDiscoveryStopped();
+    }
+
+    /**
+     * Calling {@link DiscoveryThread#createSocket()} will create a new
+     * {@link MulticastSocket} instance.
+     */
+    @Test
+    public void testCreateSocketReturnsNewInstance() throws Exception {
+        DiscoveryListener listener = mock(DiscoveryListener.class);
+
+        DiscoveryThread thread = new DiscoveryThread(
+            AndroidNetworkIntents.DEFAULT_MULTICAST_ADDRESS,
+            AndroidNetworkIntents.DEFAULT_PORT,
+            listener
+        );
+
+        MulticastSocket socket1 = thread.createSocket();
+        MulticastSocket socket2 = thread.createSocket();
+
+        Assert.assertNotNull(socket1);
+        Assert.assertNotNull(socket2);
+
+        Assert.assertNotSame(socket1, socket2);
     }
 }
