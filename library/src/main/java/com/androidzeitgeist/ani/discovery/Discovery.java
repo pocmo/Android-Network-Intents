@@ -119,6 +119,15 @@ public class Discovery {
         }
     }
 
+
+
+    public boolean isEnabled()
+    {
+
+        return thread!=null;
+    }
+    
+
     protected DiscoveryThread createDiscoveryThread() {
         return new DiscoveryThread(multicastAddress, port, listener);
     }
