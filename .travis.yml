@@ -1,0 +1,16 @@
+language: android
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-23.0.3
+    - android-23
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+sudo: false
+before_install:
+  - touch local.properties
+script:
+- ./gradlew clean assembleDebug lint test
+
