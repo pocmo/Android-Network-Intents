@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pocmo/Android-Network-Intents.svg?branch=master)](https://travis-ci.org/pocmo/Android-Network-Intents)
+
 Android Network Intents
 =======================
 Android Network Intents (ANI) is a library to send Android Intent objects to listening
