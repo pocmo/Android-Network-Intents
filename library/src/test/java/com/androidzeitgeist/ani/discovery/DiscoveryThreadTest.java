@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.net.MulticastSocket;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
@@ -109,6 +110,7 @@ public class DiscoveryThreadTest {
      * {@link MulticastSocket} instance.
      */
     @Test
+    @Ignore // Might not be able to assign address on local machine
     public void testCreateSocketReturnsNewInstance() throws Exception {
         DiscoveryListener listener = mock(DiscoveryListener.class);
 
