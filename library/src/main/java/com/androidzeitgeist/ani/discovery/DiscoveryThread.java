@@ -29,8 +29,6 @@ import android.util.Log;
 /**
  * Internal class for handling the network connection of the {@link Discovery} class
  * on a background thread.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 class DiscoveryThread extends Thread {
     private static final String TAG = "ANI/DiscoveryThread";

@@ -19,8 +19,6 @@ package com.androidzeitgeist.ani.transmitter;
 /**
  * Wrapper exception for all kind of low level exceptions that can be thrown by
  * the implementation of the {@link Transmitter} class.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 @SuppressWarnings("serial")
 public class TransmitterException extends Exception {

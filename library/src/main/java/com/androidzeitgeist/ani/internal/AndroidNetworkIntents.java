@@ -18,8 +18,6 @@ package com.androidzeitgeist.ani.internal;
 
 /**
  * Internal class for implementation specific constants.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 public class AndroidNetworkIntents {
     public static final String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";

@@ -24,8 +24,6 @@ import android.content.Intent;
  * A {@link DiscoveryListener} receives notifications from a {@link Discovery}.
  * Notifications indicate lifecycle related events as well as successfully received
  * {@link Intent}s.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 public interface DiscoveryListener {
     /**

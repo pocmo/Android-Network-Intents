@@ -22,8 +22,6 @@ import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
 
 /**
  * Discovery class for receiving {@link Intent}s from the network.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 public class Discovery {
     private String multicastAddress;
@@ -91,7 +89,7 @@ public class Discovery {
      *
      * @param listener The {@link DiscoveryListener} that will be notified about
      *                 incoming {@link Intent}s.
-     * @throws DiscoveryException
+     * @throws DiscoveryException if discovery could not be enabled.
      */
     public void enable(DiscoveryListener listener) throws DiscoveryException {
         setDisoveryListener(listener);
@@ -102,8 +100,8 @@ public class Discovery {
      * Enables the {@link Discovery} so that it will monitor the network for
      * {@link Intent}s and notify the set {@link DiscoveryListener} instance.
      *
-     * @throws DiscoveryException
-     * @throws {@link IllegalStateException} if no listener has been set
+     * @throws DiscoveryException if discovery could not be enabled.
+     * @throws IllegalStateException if no listener has been set
      * @throws IllegalAccessError if this {@link Discovery} is already enabled
      */
     public void enable() throws DiscoveryException {

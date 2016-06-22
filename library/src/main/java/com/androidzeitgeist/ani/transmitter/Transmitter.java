@@ -30,8 +30,6 @@ import com.androidzeitgeist.ani.internal.AndroidNetworkIntents;
 
 /**
  * Transmitter class for sending {@link Intent}s through network.
- *
- * @author Sebastian Kaspari <s.kaspari@gmail.com>
  */
 public class Transmitter {
     private String multicastAddress;
@@ -52,7 +50,7 @@ public class Transmitter {
      * Creates a new {@link Transmitter} instance that will sent {@link Intent}s to
      * the default multicast address and the given port port.
      *
-     * @param The destination network port.
+     * @param port The destination network port.
      */
     public Transmitter(int port) {
         this(
@@ -78,7 +76,7 @@ public class Transmitter {
      * instance.
      *
      * @param intent The intent to send.
-     * @throws TransmitterException
+     * @throws TransmitterException if intent could not be transmitted.
      */
     public void transmit(Intent intent) throws TransmitterException {
         MulticastSocket socket = null;
@@ -107,13 +105,8 @@ public class Transmitter {
      * Actual (private) implementation that serializes the {@link Intent} and sends
      * it as {@link DatagramPacket}. Used to separate the implementation from the
      * error handling code.
-     *
-     * @param socket
-     * @param intent
-     * @throws UnknownHostException
-     * @throws IOException
      */
-    private void transmit(MulticastSocket socket, Intent intent) throws UnknownHostException, IOException {
+    private void transmit(MulticastSocket socket, Intent intent) throws IOException {
         byte[] data = intent.toUri(0).getBytes();
 
         DatagramPacket packet = new DatagramPacket(
